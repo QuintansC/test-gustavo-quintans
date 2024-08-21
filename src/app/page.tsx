@@ -1,9 +1,10 @@
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-     hello world
-    </main>
+    <DefaultLayout>
+      hello world
+    </DefaultLayout>
   );
 }
