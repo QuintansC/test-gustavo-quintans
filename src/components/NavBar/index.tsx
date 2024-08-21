@@ -8,6 +8,7 @@ const NavBar = () =>{
     const onChangeStateBtn= () =>{
         setMenuIsOpen(!menuIsOpen)
     }   
+
     return (
         <>
             <button type="button" title="hamburgerMobile" className={menuIsOpen? `${style.hamburgerMenuBtn} ${style.hide}`: style.hamburgerMenuBtn} onClick={onChangeStateBtn}>

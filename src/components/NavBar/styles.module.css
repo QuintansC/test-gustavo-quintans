@@ -3,13 +3,11 @@
     color: #Fff;
 }
 
-.hide{
-    display: none !important;
-}
-
 /* desktop hd styles */
 @media (min-width: 768px) and (max-width: 1280px) {
     .nav{
+        position: fixed;
+        top: 0;
         display: block;
         width: 100%;
     }
@@ -21,6 +19,8 @@
 /* more full hd styles */
 @media (min-width: 1280px) {
     .nav{
+        position: fixed;
+        top: 0;
         display: block;
         width: 100%;
     }
@@ -44,6 +44,10 @@
         display: block;
     }
 
+    .hide{
+        display: none !important;
+    }
+
     .backgroud{
         position: absolute;
         width: 100%;
@@ -51,6 +55,5 @@
         background-color: rgba(0, 0 ,0 , 0.2);
         border: 0;
         z-index: 0;
-
     }
 }
