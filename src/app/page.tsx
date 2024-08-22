@@ -1,7 +1,7 @@
 'use client'
 import DefaultLayout from '@/components/Layouts/DefaultLayout';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
