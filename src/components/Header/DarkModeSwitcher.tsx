@@ -3,6 +3,10 @@ import useColorMode from "@/hooks/useColorMode";
 const DarkModeSwitcher = () => {
   const [colorMode, setColorMode] = useColorMode();
 
+  const style = {
+    default: `absolute left-[3px] top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear`,
+  };
+
   return (
     <li>
       <label
@@ -21,8 +25,8 @@ const DarkModeSwitcher = () => {
           className="dur absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0"
         />
         <span
-          className={`absolute left-[3px] top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear ${
-            colorMode === "dark" && "!right-[3px] !translate-x-full"
+          className={`${style.default}  ${
+            colorMode === "dark" && "right-[3px] translate-x-full"
           }`}
         >
           <span className="dark:hidden">

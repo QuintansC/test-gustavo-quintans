@@ -1,10 +1,15 @@
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { Metadata } from "next";
 
-import styles from "./page.module.css";
+export const metadata: Metadata = {
+  title: "Slideshow",
+  description: "Slideshow page",
+};
 
-export default function Home() {
+export default function Slidedshow() {
   return (
-    <main className={styles.main}>
+    <DefaultLayout>
       teste slideshow
-    </main>
+    </DefaultLayout>
   );
 }

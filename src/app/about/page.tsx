@@ -1,5 +1,4 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,10 +6,10 @@ export const metadata: Metadata = {
   description: "About page",
 };
 
-export default function Home() {
+export default function About() {
   return (
-    <main className={styles.main}>
+    <DefaultLayout>
       teste about
-    </main>
+    </DefaultLayout>
   );
 }

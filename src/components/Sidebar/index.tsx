@@ -46,8 +46,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Home",
-        route: "#",
-        children: [{ label: "eCommerce", route: "/" }],
+        route: "/"
       },
       {
         icon: (
@@ -142,10 +141,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* SIDEBAR HEADER */}
         <div className="flex items-center justify-between gap-2 px-6 pt-5.5 lg:py-6.5">
           <div/>
-
           <button
             title="sidebar"
             type="button"
@@ -167,10 +164,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </svg>
           </button>
         </div>
-        {/* <!-- SIDEBAR HEADER --> */}
-
         <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
-          {/* <!-- Sidebar Menu --> */}
           <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             {menuGroups.map((group, groupIndex) => (
               <div key={groupIndex}>
@@ -191,7 +185,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </div>
             ))}
           </nav>
-          {/* <!-- Sidebar Menu --> */}
         </div>
       </aside>
     </ClickOutside>

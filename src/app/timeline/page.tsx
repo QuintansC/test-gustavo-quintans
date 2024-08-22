@@ -1,9 +1,15 @@
-import styles from "../page.module.css";
+import DefaultLayout from "@/components/Layouts/DefaultLayout";
+import { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Slideshow",
+  description: "Slideshow page",
+};
+
+export default function Timeline() {
   return (
-    <main className={styles.main}>
+    <DefaultLayout>
       teste timelide
-    </main>
+    </DefaultLayout>
   );
 }

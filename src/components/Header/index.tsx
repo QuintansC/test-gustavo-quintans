@@ -1,7 +1,4 @@
-import Link from "next/link";
 import DarkModeSwitcher from "./DarkModeSwitcher";
-import Image from "next/image";
-
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
   setSidebarOpen: (arg0: boolean) => void;
@@ -10,7 +7,6 @@ const Header = (props: {
     <header className="sticky top-0 z-999 flex w-full bg-darkblue drop-shadow-1 dark:bg-darkmode-dark dark:drop-shadow-none">
       <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
         <div className="flex items-center gap-2 sm:gap-4 lg:hidden">
-          {/* Hamburger Button  */}
           <button
             type="button"
             title="t"
@@ -52,7 +48,6 @@ const Header = (props: {
               </span>
             </span>
           </button>
-          {/* Hamburger Button */}
         </div>
         <div className="flex items-center gap-3 2xsm:gap-7">
           <ul className="flex items-center gap-2 2xsm:gap-4">
