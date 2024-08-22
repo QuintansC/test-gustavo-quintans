@@ -9,42 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
             alternates: {
                 languages: {
-                    en: 'https://acme.com/',
+                    en: 'https://test-gustavo-quintans-git-master-quintanscs-projects.vercel.app/',
                 },
             },
-        },
-        {
-            url: 'https://test-gustavo-quintans-git-master-quintanscs-projects.vercel.app/about',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-            alternates: {
-                languages: {
-                    en: 'https://acme.com/about',
-                },
-            },
-        },
-        {
-            url: 'https://test-gustavo-quintans-git-master-quintanscs-projects.vercel.app/slideshow',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-            alternates: {
-                languages: {
-                    en: 'https://acme.com/slideshow',
-                },
-            },
-        },
-        {
-            url: 'https://test-gustavo-quintans-git-master-quintanscs-projects.vercel.app/timeline',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.5,
-            alternates: {
-                languages: {
-                    en: 'https://acme.com/timeline',
-                },
-            },
-        },
+        }
+       
     ]
 }

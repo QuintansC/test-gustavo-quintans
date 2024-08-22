@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import SidebarDropdown from "@/components/Sidebar/SidebarDropdown";
 import { usePathname } from "next/navigation";
 
@@ -25,7 +24,7 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
   return (
     <>
       <li>
-        <Link
+        <a
           href={item.route}
           onClick={handleClick}
           className={`${isItemActive ? "bg-lightblue dark:bg-blue-900" : ""} group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-lightblue dark:hover:bg-blue-950`}
@@ -33,11 +32,11 @@ const SidebarItem = ({ item, pageName, setPageName }: any) => {
           {item.icon}
           {item.label}
           {item.children}
-        </Link>
+        </a>
 
         {item.children && (
           <div
-            className={`translate transform overflow-hidden ${
+            className={`translate transformn ${
               pageName !== item.label.toLowerCase() && "hidden"
             }`}
           >

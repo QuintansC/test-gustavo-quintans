@@ -6,7 +6,7 @@ import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
 
-import { AboutIcon, HomeIcon, TimelineIcon, SlideshowIcon, BackIcon } from "@/components/utils";
+import { AboutIcon, HomeIcon, TimelineIcon, SlideshowIcon, BackIcon, UserImage } from "@/components/utils";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -15,28 +15,27 @@ interface SidebarProps {
 
 const menuGroups = [
   {
-    name: "MENU",
     menuItems: [
       {
         icon: (<Image src={HomeIcon} alt="home icon"/>),
         label: "Home",
-        route: "/"
+        route: "#"
       },
       {
         icon: (<Image src={AboutIcon} alt="about icon" width={22} height={22} />),
         label: "About",
-        route: "/about",
+        route: "#about",
       },
       {
         icon: (<Image  src={TimelineIcon} alt="timeline icon" />),
         label: "Timeline",
-        route: "/timeline",
+        route: "#timeline",
       },
       
       {
         icon: (<Image src={SlideshowIcon} alt="slideshow icon" /> ),
         label: "Slideshow",
-        route: "/slideshow",
+        route: "#slideshow",
       },
     ],
   }
@@ -48,7 +47,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <ClickOutside onClick={() => setSidebarOpen(false)}>
       <aside
-        className={`fixed left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-darkblue duration-300 ease-linear dark:bg-darkmode-dark lg:translate-x-0 ${
+        className={`fixed left-0 top-0 z-9999 flex h-screen w-72.5 flex-col bg-darkblue duration-300 ease-linear dark:bg-darkmode-dark lg:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -63,15 +62,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             <Image src={BackIcon} alt="Back Icon"></Image>
           </button>
         </div>
+        
         <div className="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
+          <Image className='m-auto z-10 top-44 right-72 rounded-full' src={UserImage} width={100} height={100} alt="Profile image"></Image>
           <nav className="mt-5 px-4 py-4 lg:mt-9 lg:px-6">
             {menuGroups.map((group, groupIndex) => (
               <div key={groupIndex}>
-                <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
-                  {group.name}
-                </h3>
-
-                <ul className="mb-6 flex flex-col gap-1.5">
+                  <ul className="mb-6 flex flex-col gap-1.5">
                   {group.menuItems.map((menuItem, menuIndex) => (
                     <SidebarItem
                       key={menuIndex}

@@ -5,7 +5,39 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
+
+.art{
+    height: 400px;
+}
+
+.panel{
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.oval{
+    position: absolute;
+    right: 11rem;
+    width: 420px;
+    height: 200px;
+    margin:90px 0 0 -90px;  
+    -moz-border-radius: 200px / 100px;
+    -webkit-border-radius: 200px / 100px;
+    shape-outside: inset(20px 5px 30px 10px round 50px);
+    border-radius: 200px / 100px;
+}
+
+html, body{
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;               /* width of the entire scrollbar */
+}
+
 
 :root{
     --phone-size: 768px;
