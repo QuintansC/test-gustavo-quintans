@@ -7,7 +7,7 @@ interface ItemProps{
   icon: React.JSX.Element;
   label: string;
   route: string;
-  children: any;
+  children?: any;
 }
 
 interface SidebarItem {
