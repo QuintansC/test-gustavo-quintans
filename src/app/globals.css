@@ -11,6 +11,7 @@
 .art{
     height: 400px;
 }
+
 @media (min-width: 768px) {
     #home{
         width: auto;
@@ -19,6 +20,16 @@
         background-size: cover;
     } 
 }
+
+@media (min-width: 768px) {
+    #timeline{
+        width: auto;
+        background-image: url('/timeline.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    } 
+}
+
 
 
 .panel{

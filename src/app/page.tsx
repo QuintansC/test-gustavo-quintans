@@ -4,17 +4,16 @@ import DefaultLayout from '@/components/Layouts/DefaultLayout';
 import { useRef } from 'react';
 
 import gsap from 'gsap';
-import { Draggable, ScrollToPlugin, ScrollTrigger } from 'gsap/all';
+import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
 
 import Image from 'next/image';
 import { UserImage } from '@/components/utils';
 import Article from '@/components/Layouts/ArticleLayout';
-import Link from 'next/link';
+import Timeline from '@/components/Timeline';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollToPlugin);
-  gsap.registerPlugin(Draggable);
 }
 export default function Layers() {
   const container = useRef<HTMLElement | any>();
@@ -62,28 +61,47 @@ export default function Layers() {
           </article>
       </section>
       <section id="about" className="section flex flex-row justify-around description panel relative bg-blue dark:bg-darkmode-dark">
-        <Article title='About me'>
-          <p className='text-justify'> 
-            I am a developer passionate about technology and innovation, 
-            always willing and with a strong sense of responsibility for my code. 
+        <Article title='About me' className='items-center w-2/3'>
+          <br/>
+          <p> 
+            I am a developer passionate about technology and innovation, e-sports and fitness lifestyle to maintain my mindset aligned to my objectives, always willing and with a strong sense of responsibility for my code. 
             Because of this, I maintain a high level of excellence in my deliveries for my own development. 
             I am well accustomed to working in a team with a high volume of demands.
-            I am passionate to e-sports too and fitness lifestyle to maintain my mindset aligned to my objectives.
           </p>
-          <h3 className='text-2xl'>Highlights Links</h3>
-          <Link href="/"> Linkedin </Link>
-          <Link href="/"> Github </Link>
-          <Link href="/"> Instagram </Link>
+          <br/>
+          <h3 className='text-2xl text-left'>Why buzzvel?</h3>
+          <br/>
+          <p>
+            I see a oportunity to grow here, because is a unique opportunity to test my english, my skills and my compentences.
+          </p>
+          <p>
+            I believe I can add a lot to the team with my technical knowledge and my social knowledge.
+          </p>
+          <p>
+          I excelled in robotics projects at my college, we were a team and were able to participate in national competitions at the Brazilian Robotics Olympics (OBR)
+            the name of our team is Alto Tietê Robotics.
+          </p>
+          <p>
+            I worked with teams of ecommerce and a agribusiness in the Brazil. I speak Spanish(C1) and learning English(B2).
+          </p>
+          <p>
+            I also know that this test is not the most elaborate one I could do, but due to time and some unforeseen circumstances,
+            I guarantee that you wont regret talking to me.
+          </p>
         </Article>
+        <aside className='w-1/2'>
+          <Timeline shortVersion={true}></Timeline>
+        </aside>
       </section>
       <section id="timeline" className="section flex flex-row justify-around description panel relative bg-orange-500">
         <Article title='Timeline'>
-          <p> Why is buzzvel?</p>
+          <p> My carrer experiences</p>
+          <br></br>
+          <Timeline shortVersion={false}></Timeline>
         </Article>
       </section>
       <section id="slideshow" className="section flex flex-row description panel relative bg-blue dark:bg-darkmode-dark">
          <div className="slides-container relative overflow-hidden flex justify-around w-[100%]">
-          
           <button className='relative z-9999' type='button' title='retroceder' onClick={rewindCarousel}> Rewind </button>
           <div className="relative w-[100%] h-[100%] overflow-hidden flex carousel " ref={carousel}>
             <div className="slide">1</div>
@@ -100,7 +118,6 @@ export default function Layers() {
           <button className='relative z-9999' type='button' title='avancar' onClick={advanceCarousel}> Advance </button>
         </div>
       </section>
-         
     </DefaultLayout>
   );
 }
