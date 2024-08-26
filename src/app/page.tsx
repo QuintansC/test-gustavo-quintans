@@ -104,16 +104,15 @@ export default function Layers() {
          <div className="slides-container relative overflow-hidden flex justify-around w-[100%]">
           <button className='relative z-9999' type='button' title='retroceder' onClick={rewindCarousel}> Rewind </button>
           <div className="relative w-[100%] h-[100%] overflow-hidden flex carousel " ref={carousel}>
-            <div className="slide">1</div>
-            <div className="slide">2</div>
-            <div className="slide">3</div>
-            <div className="slide">4</div>
-            <div className="slide">5</div>
-            <div className="slide">6</div>
-            <div className="slide">7</div>
-            <div className="slide">8</div>
-            <div className="slide">9</div>
-            <div className="slide">10</div>
+            <div className="slide">1
+              <Image src={"/viplant.webp"}  width={600} height={600} alt='Viplat Image'/>
+            </div>
+            <div className="slide">2
+              <Image src={"/traquinices.webp"} width={600} height={600} alt='Traquinices Image'/>
+            </div>
+            <div className="slide">3
+              <Image src={"/dbs.webp"} width={600} height={600} alt='Dbs Image'/>
+            </div>
           </div>
           <button className='relative z-9999' type='button' title='avancar' onClick={advanceCarousel}> Advance </button>
         </div>
