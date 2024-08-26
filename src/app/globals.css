@@ -11,6 +11,15 @@
 .art{
     height: 400px;
 }
+@media (min-width: 768px) {
+    #home{
+        width: auto;
+        background-image: url('/cover.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    } 
+}
+
 
 .panel{
     height: 100vh;
@@ -41,4 +50,26 @@ html::-webkit-scrollbar {
 
 :root{
     --phone-size: 768px;
+}
+
+
+
+.slide {
+    border-radius: 20px;
+    min-width: 1280px;
+    border-width: 1px;
+}
+
+.carousel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1280px;
+    overflow-x: auto;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.section{
+    padding-top: 6rem;
 }

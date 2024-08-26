@@ -30,9 +30,9 @@ const config: Config = {
         bodydark2: "#8A99AF",
         stroke: "#E2E8F0",
         lightblue: "#00B3CE",
-        darkblue: "#0D6F7D",
+        blue: "#2d7198",
         "gray-3": "#FAFAFA",
-        "darkmode-dark": "#001292",
+        "darkmode-dark": "#001118",
         strokedark: "#2f0261",
       },
     
