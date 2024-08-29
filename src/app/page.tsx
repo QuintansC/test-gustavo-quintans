@@ -1,12 +1,9 @@
 'use client'
 import DefaultLayout from '@/components/Layouts/DefaultLayout';
-
 import { useRef } from 'react';
-
 import gsap from 'gsap';
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
-
 import Image from 'next/image';
 import { UserImage } from '@/components/utils';
 import Article from '@/components/Layouts/ArticleLayout';
@@ -15,25 +12,20 @@ import Timeline from '@/components/Timeline';
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollToPlugin);
 }
+
 export default function Layers() {
   const container = useRef<HTMLElement | any>();
   const carousel = useRef<any>(null)
-
   const advanceCarousel = (e: React.MouseEvent<HTMLElement>) =>{
     e.preventDefault()
     let valor = carousel.current.offsetWidth
     carousel.current.scrollLeft += valor
-
   }
-
   const rewindCarousel = (e: React.MouseEvent<HTMLElement>) =>{
     e.preventDefault()
     let valor = carousel.current.offsetWidth
     carousel.current.scrollLeft -= valor
   }
-
- 
-
   useGSAP(
     () => {;
       gsap.to('.oval-1', { x: 0, rotate: 180, duration: 3 })
@@ -41,8 +33,6 @@ export default function Layers() {
     },
     { scope: container }
   );
-  
-
   return (
     <DefaultLayout>
       <section id="home" className="section flex flex-row justify-around description panel bg-transparent pt-20" ref={container}>
