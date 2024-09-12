@@ -1,12 +1,19 @@
 #exec normal da imagem
 FROM node:lts-alpine
 
-ENV HOME=/app
-WORKDIR $HOME
+WORKDIR /usr/app
 
-COPY package*.json ./
-
+COPY package.json ./
+COPY pnpm-lock.yaml ./
 COPY public ./
 
+RUN npm install --global pnpm
+
 RUN apk update && apk add --no-cache bash
-RUN yarn && yarn cache clean
+RUN pnpm install && pnpm store prune
+
+EXPOSE 3000
+
+COPY . .
+
+CMD [ "pnpm", "dev" ]

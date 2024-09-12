@@ -19,6 +19,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can see the test on page `app/page.tsx`.
 
+
+## Getting Started with Docker
+
+```bash
+docker build -t test-gustavo .
+docker run --name test-gustavo -p 3000:3000 -d test-gustavo
+```
+
+
 ### My Links:
 
 <div>

@@ -1,6 +1,6 @@
 'use client'
 import DefaultLayout from '@/components/Layouts/DefaultLayout';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollToPlugin, ScrollTrigger } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
@@ -8,6 +8,8 @@ import Image from 'next/image';
 import { UserImage } from '@/components/utils';
 import Article from '@/components/Layouts/ArticleLayout';
 import Timeline from '@/components/Timeline';
+import Slider from '@/components/Slider';
+import useData from '@/hooks/useData';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollToPlugin);
@@ -33,6 +35,9 @@ export default function Layers() {
     },
     { scope: container }
   );
+
+  const data = useData();
+
   return (
     <DefaultLayout>
       <section id="home" className="section flex flex-row justify-around description panel bg-transparent pt-20" ref={container}>
@@ -94,15 +99,19 @@ export default function Layers() {
          <div className="slides-container relative overflow-hidden flex justify-around w-[100%]">
           <button className='relative z-9999' type='button' title='retroceder' onClick={rewindCarousel}> Rewind </button>
           <div className="relative w-[100%] h-[100%] overflow-hidden flex carousel " ref={carousel}>
-            <div className="slide">1
-              <Image src={"/viplant.webp"}  width={600} height={600} alt='Viplat Image'/>
-            </div>
-            <div className="slide">2
-              <Image src={"/traquinices.webp"} width={600} height={600} alt='Traquinices Image'/>
-            </div>
-            <div className="slide">3
-              <Image src={"/dbs.webp"} width={600} height={600} alt='Dbs Image'/>
-            </div>
+
+            {data[0]?.datas.map((project: any)=>{
+              return (
+                <Slider 
+                  key={project} 
+                  src={`/${project.name}.webp`} 
+                  alt={`${project.name} Image`} 
+                  name={project.name}
+                  segment={project.segment}
+                  description={project.description}
+                />
+              )
+            })}
           </div>
           <button className='relative z-9999' type='button' title='avancar' onClick={advanceCarousel}> Advance </button>
         </div>
